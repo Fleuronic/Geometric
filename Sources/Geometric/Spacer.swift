@@ -1,18 +1,14 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import UIKit
-import Layoutless
+import class UIKit.UIView
+import protocol Layoutless.AnyLayout
 
 public extension UIView {
 	static var spacer: Self {
 		.init()
 	}
 
-	static var container: Self {
-		.init()
-	}
-
 	static func containing(_ layout: AnyLayout) -> AnyLayout {
-		container.addingLayout(layout)
+		UIView().addingLayout(layout)
 	}
 }

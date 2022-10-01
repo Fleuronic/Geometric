@@ -1,8 +1,10 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import UIKit
-import Layoutless
-import Metric
+import enum Metric.Spacing
+import class UIKit.UIStackView
+import struct Layoutless.Layout
+import func Layoutless.stack
+import protocol Layoutless.AnyLayout
 
 public extension UIStackView {
 	static func vertical(
