@@ -1,25 +1,23 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Layoutless",
-        "repositoryURL": "https://github.com/DeclarativeHub/Layoutless",
-        "state": {
-          "branch": null,
-          "revision": "50ae5ab4cb9bf676c1901f4ba0f267f27e68d0a7",
-          "version": "0.4.3"
-        }
-      },
-      {
-        "package": "Metric",
-        "repositoryURL": "https://github.com/Fleuronic/Metric.git",
-        "state": {
-          "branch": "main",
-          "revision": "6ad97c745661e88ba160afb2e250f3966feb8b81",
-          "version": null
-        }
+  "pins" : [
+    {
+      "identity" : "layoutless",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DeclarativeHub/Layoutless",
+      "state" : {
+        "revision" : "50ae5ab4cb9bf676c1901f4ba0f267f27e68d0a7",
+        "version" : "0.4.3"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "metric",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Metric.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "5570cdd9d11b5ec5efb49cc4007e3394799ca0fd"
+      }
+    }
+  ],
+  "version" : 2
 }

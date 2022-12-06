@@ -1,10 +1,10 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.7
 import PackageDescription
 
 let package = Package(
 	name: "Geometric",
 	platforms: [
-		.iOS(.v15)
+		.iOS(.v16)
 	],
 	products: [
 		.library(
@@ -15,7 +15,7 @@ let package = Package(
 		)
 	],
 	dependencies: [
-		.package(url: "https://github.com/Fleuronic/Metric.git", .branch("main")),
+		.package(url: "https://github.com/Fleuronic/Metric.git", branch: "main"),
 		.package(url: "https://github.com/DeclarativeHub/Layoutless", .upToNextMajor(from: "0.4.0"))
 	],
 	targets: [
