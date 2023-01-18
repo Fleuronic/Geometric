@@ -9,9 +9,7 @@ let package = Package(
 	products: [
 		.library(
 			name: "Geometric",
-			targets: [
-				"Geometric"
-			]
+			targets: ["Geometric"]
 		)
 	],
 	dependencies: [
@@ -21,7 +19,10 @@ let package = Package(
 	targets: [
 		.target(
 			name: "Geometric",
-			dependencies: ["Metric", "Layoutless"]
+			dependencies: [
+				"Metric",
+				"Layoutless"
+			]
 		),
 		.testTarget(
 			name: "GeometricTests",
