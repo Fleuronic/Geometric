@@ -9,6 +9,7 @@ import protocol Layoutless.AnyLayout
 public extension UIStackView {
 	static func vertical(
 		spacing: Spacing.Vertical = .zero,
+		alignment: Alignment = .fill,
 		@LayoutBuilder layout: () -> [AnyLayout],
 		configure: @escaping (UIStackView) -> Void = { _ in }
 	) -> Layout<UIStackView> {
@@ -17,7 +18,7 @@ public extension UIStackView {
 			axis: .vertical,
 			spacing: spacing.value,
 			distribution: .fill,
-			alignment: .fill,
+			alignment: alignment,
 			configure: configure
 		)
 	}
