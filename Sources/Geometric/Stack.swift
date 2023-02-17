@@ -25,6 +25,7 @@ public extension UIStackView {
 
 	static func horizontal(
 		spacing: Spacing.Horizontal = .zero,
+		distribution: Distribution = .fill,
 		@LayoutBuilder layout: () -> [AnyLayout],
 		configure: @escaping (UIStackView) -> Void = { _ in }
 	) -> Layout<UIStackView> {
@@ -32,7 +33,7 @@ public extension UIStackView {
 			layout(),
 			axis: .horizontal,
 			spacing: spacing.value,
-			distribution: .fill,
+			distribution: distribution,
 			alignment: .fill,
 			configure: configure
 		)
@@ -42,6 +43,10 @@ public extension UIStackView {
 // MARK: -
 @resultBuilder public struct LayoutBuilder {
 	public static func buildBlock(_ layouts: AnyLayout?...) -> [AnyLayout] {
+		layouts.compactMap { $0 }
+	}
+
+	public static func buildBlock(_ layouts: [AnyLayout?]) -> [AnyLayout] {
 		layouts.compactMap { $0 }
 	}
 }
