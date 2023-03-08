@@ -7,18 +7,18 @@ import protocol Layoutless.LayoutProtocol
 import protocol Layoutless.Anchorable
 
 public extension LayoutProtocol where Node: Anchorable {
-	func size(_ size: Size) -> Layout<Node> {
+	func size(named name: Size.Name) -> Layout<Node> {
 		sizing(
-			toWidth: .init(floatLiteral: Float(size.width.value)),
-			height: .init(floatLiteral: Float(size.height.value))
+			toWidth: .init(floatLiteral: Float(name(Size.self).width.value)),
+			height: .init(floatLiteral: Float(name(Size.self).height.value))
 		)
 	}
 
-	func width(_ width: Size.Width) -> Layout<Node> {
-		sizing(toWidth: .init(floatLiteral: Float(width.value)))
+	func width(named name: Size.Width.Name) -> Layout<Node> {
+		sizing(toWidth: .init(floatLiteral: Float(name(Size.Width.self).value)))
 	}
 
-	func height(_ height: Size.Height) -> Layout<Node> {
-		sizing(toHeight: .init(floatLiteral: Float(height.value)))
+	func height(named name: Size.Height.Name) -> Layout<Node> {
+		sizing(toHeight: .init(floatLiteral: Float(name(Size.Height.self).value)))
 	}
 }

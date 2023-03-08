@@ -36,8 +36,8 @@ public extension LayoutProtocol where Node: Anchorable {
 		)
 	}
 
-	func margins(_ margins: Insets.Horizontal) -> Layout<some Anchorable & LayoutNode> {
-		let margin = Length.greaterThanOrEqualTo(margins.value)
+	func margins(named name: Insets.Horizontal.Name) -> Layout<some Anchorable & LayoutNode> {
+		let margin = Length.greaterThanOrEqualTo(name(Insets.Horizontal.self).value)
 		return stickingToParentEdges(
 			left: margin,
 			right: margin
