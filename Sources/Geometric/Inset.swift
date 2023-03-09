@@ -1,26 +1,34 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import enum Layoutless.Length
+import Layoutless
+
 import struct CoreGraphics.CGFloat
 import struct Metric.Insets
-import struct Layoutless.Layout
-import protocol Layoutless.LayoutNode
-import protocol Layoutless.LayoutProtocol
-import protocol Layoutless.Anchorable
 
 public extension LayoutProtocol where Node: Anchorable {
-	func insetBy(
-		insets: Insets? = nil,
-		horizontalInsets: Insets.Horizontal = .zero,
-		verticalInsets: Insets.Vertical = .zero
-	) -> Layout<some Anchorable & LayoutNode> {
-		insetBy(
-			insets: insets?.value,
-			horizontalInsets: horizontalInsets.value,
-			verticalInsets: verticalInsets.value
-		)
+	func insets(named name: Insets.Name) -> Layout<some Anchorable & LayoutNode> {
+		insetBy(insets: name(Insets.self).value)
 	}
 
+	func horizontalInsets(named name: Insets.Horizontal.Name) -> Layout<some Anchorable & LayoutNode> {
+		insetBy(horizontalInsets: name(Insets.Horizontal.self).value)
+	}
+
+	func verticalInsets(named name: Insets.Vertical.Name) -> Layout<some Anchorable & LayoutNode> {
+		insetBy(verticalInsets: name(Insets.Vertical.self).value)
+	}
+
+	func margins(named name: Insets.Horizontal.Name) -> Layout<some Anchorable & LayoutNode> {
+		let margin = Length.greaterThanOrEqualTo(name(Insets.Horizontal.self).value)
+		return stickingToParentEdges(
+			left: margin,
+			right: margin
+		)
+	}
+}
+
+// MARK: -
+private extension LayoutProtocol where Node: Anchorable {
 	func insetBy(
 		insets: CGFloat? = nil,
 		horizontalInsets: CGFloat = 0,
@@ -33,14 +41,6 @@ public extension LayoutProtocol where Node: Anchorable {
 			rightBy: horizontal,
 			topBy: vertical,
 			bottomBy: vertical
-		)
-	}
-
-	func margins(named name: Insets.Horizontal.Name) -> Layout<some Anchorable & LayoutNode> {
-		let margin = Length.greaterThanOrEqualTo(name(Insets.Horizontal.self).value)
-		return stickingToParentEdges(
-			left: margin,
-			right: margin
 		)
 	}
 }

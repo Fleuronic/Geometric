@@ -1,12 +1,9 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import enum Layoutless.Length
-import class Layoutless.ChildNode
+import Layoutless
+
 import struct CoreGraphics.CGFloat
 import struct Metric.Insets
-import struct Layoutless.Layout
-import protocol Layoutless.LayoutProtocol
-import protocol Layoutless.Anchorable
 
 public extension LayoutProtocol where Node: Anchorable {
 	func fillingParent(

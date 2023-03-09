@@ -1,11 +1,7 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct UIKit.CGRect
-import class UIKit.UIView
-import class Foundation.NSCoder
-import func Layoutless.EmptyLayout
-import protocol Layoutless.Anchorable
-import struct Layoutless.Layout
+import UIKit
+import Layoutless
 
 open class View<Base: UIView>: UIView {
 	open var layout: Layout<Base> {

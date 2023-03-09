@@ -1,7 +1,7 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import class UIKit.UIView
-import protocol Layoutless.AnyLayout
+import UIKit
+import Layoutless
 
 public extension UIView {
 	static var spacer: Self {
