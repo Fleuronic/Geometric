@@ -5,13 +5,6 @@ import Layoutless
 
 import struct Metric.Styled
 
-public extension Styled {
-	var layout: Layout<UIView> {
-		.just(base)
-	}
-}
-
-// MARK: -
 public extension UIView {
 	static func containing(_ layout: AnyLayout) -> AnyLayout {
 		UIView().addingLayout(layout)
