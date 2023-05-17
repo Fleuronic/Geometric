@@ -3,11 +3,20 @@
 import UIKit
 import Layoutless
 
-import struct Metric.Styled
+public extension UIView {
+	static var spacer: Self {
+		.init()
+	}
 
-public extension Styled {
 	static func containing(_ layout: AnyLayout) -> AnyLayout {
 		UIView().addingLayout(layout)
+	}
+}
+
+// MARK: -
+public extension Styled {
+	static func containing(_ layout: AnyLayout) -> AnyLayout {
+		Base.containing(layout)
 	}
 }
 

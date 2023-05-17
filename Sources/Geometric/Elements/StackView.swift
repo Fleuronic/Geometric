@@ -3,7 +3,15 @@
 import UIKit
 import Layoutless
 
-import struct Metric.Styled
+public extension UIStackView {
+	static var vertical: Styled<UIStackView> {
+		.init().axis(.vertical)
+	}
+
+	static var horizontal: Styled<UIStackView> {
+		.init()
+	}
+}
 
 public extension Styled where Base: UIStackView {
 	func layout(@LayoutBuilder content: () -> [AnyLayout]) -> Layout<UIStackView> {
