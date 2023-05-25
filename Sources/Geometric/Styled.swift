@@ -13,7 +13,7 @@ public struct Styled<Base: UIView> {
 
 // MARK: -
 public extension Styled {
-	subscript<T>(dynamicMember keyPath: WritableKeyPath<Base, T>) -> (T) -> Self {
+	subscript<Value>(dynamicMember keyPath: WritableKeyPath<Base, Value>) -> (Value) -> Self {
 		{
 			var base = self.base
 			base[keyPath: keyPath] = $0
