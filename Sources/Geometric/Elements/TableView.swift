@@ -3,7 +3,7 @@
 import UIKit
 
 public extension UITableView {
-	static var plain: Styled<UITableView> {
+	static var `default`: Styled<UITableView> {
 		.init()
 	}
     
