@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "dynamiccolor",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/yannickl/DynamicColor",
+      "state" : {
+        "revision" : "d9beca13ca85baa50ee29832d0db5129fba69630",
+        "version" : "5.0.1"
+      }
+    },
+    {
       "identity" : "layoutless",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DeclarativeHub/Layoutless",
@@ -12,10 +21,10 @@
     {
       "identity" : "metric",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/Metric.git",
+      "location" : "https://github.com/Fleuronic/Metric",
       "state" : {
         "branch" : "main",
-        "revision" : "5570cdd9d11b5ec5efb49cc4007e3394799ca0fd"
+        "revision" : "6be8ecdceccfe16e1ae469f6f4d46959037b8999"
       }
     }
   ],
