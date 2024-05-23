@@ -3,7 +3,7 @@
 import Layoutless
 
 @resultBuilder public struct LayoutBuilder {
-    public static func buildBlock(_ layouts: AnyLayout...) -> [AnyLayout] {
+	public static func buildBlock(_ layouts: AnyLayout...) -> [AnyLayout] {
 		layouts
 	}
 

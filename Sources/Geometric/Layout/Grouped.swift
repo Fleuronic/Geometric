@@ -3,7 +3,7 @@
 import Layoutless
 
 @resultBuilder public struct Grouped {
-    public static func buildBlock(_ layouts: AnyLayout...) -> AnyLayout {
-        group(layouts)
-    }
+	public static func buildBlock(_ layouts: AnyLayout...) -> AnyLayout {
+		group(layouts)
+	}
 }
